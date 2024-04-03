@@ -1,0 +1,35 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             simpleshift,CODE,READONLY
+    2 00000000 E59F100C        LDR              R1,=0X0000111
+    3 00000004 E1A02081        MOV              R2,R1,LSL #1
+    4 00000008 E1A030A1        MOV              R3,R1,LSR #1
+    5 0000000C E1A040C1        MOV              R4,R1,ASR #1
+    6 00000010 E1A00000        NOP
+    7 00000014                 END
+              00000111 
+Command Line: --debug --xref --diag_suppress=9931 --apcs=interwork --depend=.\o
+bjects\simpleshift.d -o.\objects\simpleshift.o -ID:\Kiel-5\ARM\RV31\INC -ID:\Ki
+el-5\ARM\CMSIS\Include -ID:\Kiel-5\ARM\Inc\Philips --predefine="__EVAL SETA 1" 
+--predefine="__UVISION_VERSION SETA 520" --list=.\listings\simpleshift.lst simp
+leshift.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+simpleshift 00000000
+
+Symbol: simpleshift
+   Definitions
+      At line 1 in file simpleshift.s
+   Uses
+      None
+Comment: simpleshift unused
+1 symbol
+335 symbols in table

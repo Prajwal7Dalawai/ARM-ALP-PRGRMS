@@ -1,0 +1,2 @@
+Dependencies for Project 'Add64', Target 'Target 1': (DO NOT MODIFY !)
+F (.\Add64.s)(0x660C2B0D)(--cpu ARM7TDMI --pd "__EVAL SETA 1" -g --apcs=interwork -I D:\Kiel-5\ARM\RV31\INC-I D:\Kiel-5\ARM\CMSIS\Include-I D:\Kiel-5\ARM\Inc\Philips--pd "__UVISION_VERSION SETA 520"--list .\listings\add64.lst --xref -o .\objects\add64.o --depend .\objects\add64.d)

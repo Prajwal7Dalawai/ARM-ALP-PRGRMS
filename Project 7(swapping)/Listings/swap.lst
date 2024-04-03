@@ -1,0 +1,33 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             swap,CODE,READONLY
+    2 00000000 E3A00001        MOV              R0,#01
+    3 00000004 E3A01002        MOV              R1,#02
+    4 00000008 E0200001        EOR              R0,R0,R1
+    5 0000000C E0201001        EOR              R1,R0,R1
+    6 00000010 E0200001        EOR              R0,R0,R1
+    7 00000014                 END
+Command Line: --debug --xref --diag_suppress=9931 --apcs=interwork --depend=.\o
+bjects\swap.d -o.\objects\swap.o -ID:\Kiel-5\ARM\RV31\INC -ID:\Kiel-5\ARM\CMSIS
+\Include -ID:\Kiel-5\ARM\Inc\Philips --predefine="__EVAL SETA 1" --predefine="_
+_UVISION_VERSION SETA 520" --list=.\listings\swap.lst swap.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+swap 00000000
+
+Symbol: swap
+   Definitions
+      At line 1 in file swap.s
+   Uses
+      None
+Comment: swap unused
+1 symbol
+333 symbols in table

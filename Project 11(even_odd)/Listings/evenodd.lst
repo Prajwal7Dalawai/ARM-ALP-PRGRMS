@@ -1,0 +1,86 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             evenodd,CODE,READONLY
+    2 00000000 E59F0044        LDR              R0,=ARR
+    3 00000004 E3A01005        MOV              R1,#05      ;NO. OF ELEMENTS IN
+                                                             THE ARRAY
+    4 00000008 E3A02000        MOV              R2,#00      ;COUNT OF EVEN NUMB
+                                                            ERS
+    5 0000000C E3A03000        MOV              R3,#00      ;COUNT OF ODD NUMBE
+                                                            RS
+    6 00000010 E4904004 
+                       NEXTNUM LDR              R4,[R0],#04
+    7 00000014 E1A090A4        MOV              R9,R4,LSR #01
+    8 00000018 8A000001        BHI              ODDNO
+    9 0000001C E2822001        ADD              R2,R2,#01
+   10 00000020 EA000000        B                NEXT
+   11 00000024 E2833001 
+                       ODDNO   ADD              R3,R3,#01
+   12 00000028 E2511001 
+                       NEXT    SUBS             R1,R1,#01
+   13 0000002C E3510000        CMP              R1,#0
+   14 00000030 1AFFFFF6        BNE              NEXTNUM
+   15 00000034 E1A00000        NOP
+   16 00000038 00000001 
+              00000002 
+              00000003 
+              00000004 
+              00000005 ARR     DCD              0X1, 0X2, 0X3, 0X4, 0X5
+   17 0000004C                 END
+              00000000 
+Command Line: --debug --xref --diag_suppress=9931 --apcs=interwork --depend=.\o
+bjects\evenodd.d -o.\objects\evenodd.o -ID:\Kiel-5\ARM\RV31\INC -ID:\Kiel-5\ARM
+\CMSIS\Include -ID:\Kiel-5\ARM\Inc\Philips --predefine="__EVAL SETA 1" --predef
+ine="__UVISION_VERSION SETA 520" --list=.\listings\evenodd.lst evenodd.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+ARR 00000038
+
+Symbol: ARR
+   Definitions
+      At line 16 in file evenodd.s
+   Uses
+      At line 2 in file evenodd.s
+Comment: ARR used once
+NEXT 00000028
+
+Symbol: NEXT
+   Definitions
+      At line 12 in file evenodd.s
+   Uses
+      At line 10 in file evenodd.s
+Comment: NEXT used once
+NEXTNUM 00000010
+
+Symbol: NEXTNUM
+   Definitions
+      At line 6 in file evenodd.s
+   Uses
+      At line 14 in file evenodd.s
+Comment: NEXTNUM used once
+ODDNO 00000024
+
+Symbol: ODDNO
+   Definitions
+      At line 11 in file evenodd.s
+   Uses
+      At line 8 in file evenodd.s
+Comment: ODDNO used once
+evenodd 00000000
+
+Symbol: evenodd
+   Definitions
+      At line 1 in file evenodd.s
+   Uses
+      None
+Comment: evenodd unused
+5 symbols
+339 symbols in table

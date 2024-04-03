@@ -1,0 +1,2 @@
+Dependencies for Project 'Add32', Target 'Target 1': (DO NOT MODIFY !)
+F (.\Add32.s)(0x660AF29C)(--cpu ARM7TDMI --pd "__EVAL SETA 1" -g --apcs=interwork -I D:\Kiel-5\ARM\RV31\INC-I D:\Kiel-5\ARM\CMSIS\Include-I D:\Kiel-5\ARM\Inc\Philips--pd "__UVISION_VERSION SETA 520"--list .\listings\add32.lst --xref -o .\objects\add32.o --depend .\objects\add32.d)

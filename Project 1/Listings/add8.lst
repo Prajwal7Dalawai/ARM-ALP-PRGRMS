@@ -1,0 +1,32 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             Add8, CODE, READONLY
+    2 00000000 E3A01002        MOV              R1,#02
+    3 00000004 E3A02003        MOV              R2,#03
+    4 00000008 E0913002        ADDS             R3,R1,R2
+    5 0000000C E1A00000        NOP
+    6 00000010                 END
+Command Line: --debug --xref --diag_suppress=9931 --apcs=interwork --depend=.\o
+bjects\add8.d -o.\objects\add8.o -ID:\Kiel-5\ARM\RV31\INC -ID:\Kiel-5\ARM\CMSIS
+\Include -ID:\Kiel-5\ARM\Inc\Philips --predefine="__EVAL SETA 1" --predefine="_
+_UVISION_VERSION SETA 520" --list=.\listings\add8.lst Add8.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+Add8 00000000
+
+Symbol: Add8
+   Definitions
+      At line 1 in file Add8.s
+   Uses
+      None
+Comment: Add8 unused
+1 symbol
+333 symbols in table

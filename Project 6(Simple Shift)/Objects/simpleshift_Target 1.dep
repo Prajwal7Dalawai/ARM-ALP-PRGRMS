@@ -1,0 +1,2 @@
+Dependencies for Project 'simpleshift', Target 'Target 1': (DO NOT MODIFY !)
+F (.\simpleshift.s)(0x660C3887)(--cpu ARM7TDMI --pd "__EVAL SETA 1" -g --apcs=interwork -I D:\Kiel-5\ARM\RV31\INC-I D:\Kiel-5\ARM\CMSIS\Include-I D:\Kiel-5\ARM\Inc\Philips--pd "__UVISION_VERSION SETA 520"--list .\listings\simpleshift.lst --xref -o .\objects\simpleshift.o --depend .\objects\simpleshift.d)

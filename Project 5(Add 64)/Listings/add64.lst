@@ -1,0 +1,129 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             Add64,CODE,READONLY
+    2 00000000 E59F0034        LDR              R0,=LNUM1
+    3 00000004 E59F1034        LDR              R1,=UNUM1
+    4 00000008 E59F2034        LDR              R2,=LNUM2
+    5 0000000C E59F3034        LDR              R3,=UNUM2
+    6 00000010         
+    7 00000010 E5904000        LDR              R4,[R0]
+    8 00000014 E5915000        LDR              R5,[R1]
+    9 00000018         
+   10 00000018 E5926000        LDR              R6,[R2]
+   11 0000001C E5937000        LDR              R7,[R3]
+   12 00000020         
+   13 00000020 E59F8024        LDR              R8,=URESULT
+   14 00000024 E59F9024        LDR              R9,=LRESULT
+   15 00000028         
+   16 00000028 E094A006        ADDS             R10,R4,R6
+   17 0000002C E0A5B007        ADC              R11,R5,R7
+   18 00000030         
+   19 00000030 E58CA000        STR              R10,[R12]
+   20 00000034 E58DB000        STR              R11,[R13]
+   21 00000038 E1A00000        NOP
+   22 0000003C 00000000 
+              00000000 
+              00000000 
+              00000000 
+              00000000 
+              00000000         AREA             data1,DATA,READWRITE
+   23 00000000 00000000 
+                       LNUM1   DCD              0X0
+   24 00000004 00000000 
+                       UNUM1   DCD              0X0
+   25 00000008 00000000 
+                       LNUM2   DCD              0X0
+   26 0000000C 00000000 
+                       UNUM2   DCD              0X0
+   27 00000010 00000000 
+                       URESULT DCD              0X0
+   28 00000014 00000000 
+                       LRESULT DCD              0X0
+   29 00000018                 END
+Command Line: --debug --xref --diag_suppress=9931 --apcs=interwork --depend=.\o
+bjects\add64.d -o.\objects\add64.o -ID:\Kiel-5\ARM\RV31\INC -ID:\Kiel-5\ARM\CMS
+IS\Include -ID:\Kiel-5\ARM\Inc\Philips --predefine="__EVAL SETA 1" --predefine=
+"__UVISION_VERSION SETA 520" --list=.\listings\add64.lst Add64.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+Add64 00000000
+
+Symbol: Add64
+   Definitions
+      At line 1 in file Add64.s
+   Uses
+      None
+Comment: Add64 unused
+1 symbol
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+LNUM1 00000000
+
+Symbol: LNUM1
+   Definitions
+      At line 23 in file Add64.s
+   Uses
+      At line 2 in file Add64.s
+Comment: LNUM1 used once
+LNUM2 00000008
+
+Symbol: LNUM2
+   Definitions
+      At line 25 in file Add64.s
+   Uses
+      At line 4 in file Add64.s
+Comment: LNUM2 used once
+LRESULT 00000014
+
+Symbol: LRESULT
+   Definitions
+      At line 28 in file Add64.s
+   Uses
+      At line 14 in file Add64.s
+Comment: LRESULT used once
+UNUM1 00000004
+
+Symbol: UNUM1
+   Definitions
+      At line 24 in file Add64.s
+   Uses
+      At line 3 in file Add64.s
+Comment: UNUM1 used once
+UNUM2 0000000C
+
+Symbol: UNUM2
+   Definitions
+      At line 26 in file Add64.s
+   Uses
+      At line 5 in file Add64.s
+Comment: UNUM2 used once
+URESULT 00000010
+
+Symbol: URESULT
+   Definitions
+      At line 27 in file Add64.s
+   Uses
+      At line 13 in file Add64.s
+Comment: URESULT used once
+data1 00000000
+
+Symbol: data1
+   Definitions
+      At line 22 in file Add64.s
+   Uses
+      None
+Comment: data1 unused
+7 symbols
+342 symbols in table

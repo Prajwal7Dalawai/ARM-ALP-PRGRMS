@@ -1,0 +1,32 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             Mul8,CODE,READONLY
+    2 00000000 E3A0105F        MOV              R1,#0X5F
+    3 00000004 E3A0206A        MOV              R2,#0X6A
+    4 00000008 E0130192        MULS             R3,R2,R1
+    5 0000000C E1A00000        NOP
+    6 00000010                 END
+Command Line: --debug --xref --diag_suppress=9931 --apcs=interwork --depend=.\o
+bjects\mul8.d -o.\objects\mul8.o -ID:\Kiel-5\ARM\RV31\INC -ID:\Kiel-5\ARM\CMSIS
+\Include -ID:\Kiel-5\ARM\Inc\Philips --predefine="__EVAL SETA 1" --predefine="_
+_UVISION_VERSION SETA 520" --list=.\listings\mul8.lst Mul8.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+Mul8 00000000
+
+Symbol: Mul8
+   Definitions
+      At line 1 in file Mul8.s
+   Uses
+      None
+Comment: Mul8 unused
+1 symbol
+333 symbols in table

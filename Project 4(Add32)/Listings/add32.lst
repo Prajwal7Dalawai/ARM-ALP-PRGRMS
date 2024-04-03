@@ -1,0 +1,84 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             Add32,CODE,READONLY
+    2 00000000 E59F001C        LDR              R0,=NUM1
+    3 00000004 E59F101C        LDR              R1,=NUM2
+    4 00000008 E59F901C        LDR              R9,=RESULT
+    5 0000000C E5903000        LDR              R3,[R0]
+    6 00000010 E5914000        LDR              R4,[R1]
+    7 00000014 E0935004        ADDS             R5,R3,R4
+    8 00000018 E5895000        STR              R5,[R9]
+    9 0000001C         
+   10 0000001C 00001111 
+                       NUM1    DCD              0X1111
+   11 00000020 00002222 
+                       NUM2    DCD              0X2222
+   12 00000024 00000000 
+              00000000 
+              00000000         AREA             data1,DATA,READWRITE
+   13 00000000 00000000 
+                       RESULT  DCD              0X0
+   14 00000004                 END
+Command Line: --debug --xref --diag_suppress=9931 --apcs=interwork --depend=.\o
+bjects\add32.d -o.\objects\add32.o -ID:\Kiel-5\ARM\RV31\INC -ID:\Kiel-5\ARM\CMS
+IS\Include -ID:\Kiel-5\ARM\Inc\Philips --predefine="__EVAL SETA 1" --predefine=
+"__UVISION_VERSION SETA 520" --list=.\listings\add32.lst Add32.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+Add32 00000000
+
+Symbol: Add32
+   Definitions
+      At line 1 in file Add32.s
+   Uses
+      None
+Comment: Add32 unused
+NUM1 0000001C
+
+Symbol: NUM1
+   Definitions
+      At line 10 in file Add32.s
+   Uses
+      At line 2 in file Add32.s
+Comment: NUM1 used once
+NUM2 00000020
+
+Symbol: NUM2
+   Definitions
+      At line 11 in file Add32.s
+   Uses
+      At line 3 in file Add32.s
+Comment: NUM2 used once
+3 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+RESULT 00000000
+
+Symbol: RESULT
+   Definitions
+      At line 13 in file Add32.s
+   Uses
+      At line 4 in file Add32.s
+Comment: RESULT used once
+data1 00000000
+
+Symbol: data1
+   Definitions
+      At line 12 in file Add32.s
+   Uses
+      None
+Comment: data1 unused
+2 symbols
+339 symbols in table

@@ -1,0 +1,84 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             fact,CODE,READONLY
+    2 00000000 E59F0024        LDR              R0,=NUM
+    3 00000004 E3A01001        MOV              R1,#01      ;PRODUCT=1
+    4 00000008 E5902000        LDR              R2,[R0]
+    5 0000000C E1A06002 
+                       NEXTNUM MOV              R6,R2
+    6 00000010 E0110296        MULS             R1,R6,R2
+    7 00000014 E2522001        SUBS             R2,R2,#01
+    8 00000018 E3520000        CMP              R2,#0
+    9 0000001C E59F500C        LDR              R5,=RESULT
+   10 00000020 E5851000        STR              R1,[R5]
+   11 00000024 E1A00000        NOP
+   12 00000028 00000007 
+                       NUM     DCD              0X7
+   13 0000002C 00000000 
+              00000000         AREA             data1,DATA,READWRITE
+   14 00000000 00000000 
+                       RESULT  DCD              0X0
+   15 00000004                 END
+Command Line: --debug --xref --diag_suppress=9931 --apcs=interwork --depend=.\o
+bjects\fact.d -o.\objects\fact.o -ID:\Kiel-5\ARM\RV31\INC -ID:\Kiel-5\ARM\CMSIS
+\Include -ID:\Kiel-5\ARM\Inc\Philips --predefine="__EVAL SETA 1" --predefine="_
+_UVISION_VERSION SETA 520" --list=.\listings\fact.lst fact.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+NEXTNUM 0000000C
+
+Symbol: NEXTNUM
+   Definitions
+      At line 5 in file fact.s
+   Uses
+      None
+Comment: NEXTNUM unused
+NUM 00000028
+
+Symbol: NUM
+   Definitions
+      At line 12 in file fact.s
+   Uses
+      At line 2 in file fact.s
+Comment: NUM used once
+fact 00000000
+
+Symbol: fact
+   Definitions
+      At line 1 in file fact.s
+   Uses
+      None
+Comment: fact unused
+3 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+RESULT 00000000
+
+Symbol: RESULT
+   Definitions
+      At line 14 in file fact.s
+   Uses
+      At line 9 in file fact.s
+Comment: RESULT used once
+data1 00000000
+
+Symbol: data1
+   Definitions
+      At line 13 in file fact.s
+   Uses
+      None
+Comment: data1 unused
+2 symbols
+339 symbols in table

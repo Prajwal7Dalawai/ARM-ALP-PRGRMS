@@ -1,0 +1,88 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             arraysum,CODE,READONLY
+    2 00000000 E59F0034        LDR              R0,=ARRAY
+    3 00000004 E3A01005        MOV              R1,#05      ;NO. OF ELEMENTS IN
+                                                             THE ARRAY
+    4 00000008 E3A02000        MOV              R2,#0       ;SUM=0
+    5 0000000C E4903004 
+                       NEXTELE LDR              R3,[R0],#04
+    6 00000010 E0922003        ADDS             R2,R2,R3
+    7 00000014 E2511001        SUBS             R1,R1,#01
+    8 00000018 1AFFFFFB        BNE              NEXTELE
+    9 0000001C E59F501C        LDR              R5,=RESULT
+   10 00000020 E5852000        STR              R2,[R5]
+   11 00000024 E1A00000        NOP
+   12 00000028 00000001 
+              00000002 
+              00000003 
+              00000004 
+              00000005 ARRAY   DCD              0X1, 0X2, 0X3, 0X4, 0X5
+   13 0000003C 00000000 
+              00000000         AREA             data1,DATA,READWRITE
+   14 00000000 00000000 
+                       RESULT  DCD              0X0
+   15 00000004                 END
+Command Line: --debug --xref --diag_suppress=9931 --apcs=interwork --depend=.\o
+bjects\arraysum.d -o.\objects\arraysum.o -ID:\Kiel-5\ARM\RV31\INC -ID:\Kiel-5\A
+RM\CMSIS\Include -ID:\Kiel-5\ARM\Inc\Philips --predefine="__EVAL SETA 1" --pred
+efine="__UVISION_VERSION SETA 520" --list=.\listings\arraysum.lst arraysum.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+ARRAY 00000028
+
+Symbol: ARRAY
+   Definitions
+      At line 12 in file arraysum.s
+   Uses
+      At line 2 in file arraysum.s
+Comment: ARRAY used once
+NEXTELE 0000000C
+
+Symbol: NEXTELE
+   Definitions
+      At line 5 in file arraysum.s
+   Uses
+      At line 8 in file arraysum.s
+Comment: NEXTELE used once
+arraysum 00000000
+
+Symbol: arraysum
+   Definitions
+      At line 1 in file arraysum.s
+   Uses
+      None
+Comment: arraysum unused
+3 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+RESULT 00000000
+
+Symbol: RESULT
+   Definitions
+      At line 14 in file arraysum.s
+   Uses
+      At line 9 in file arraysum.s
+Comment: RESULT used once
+data1 00000000
+
+Symbol: data1
+   Definitions
+      At line 13 in file arraysum.s
+   Uses
+      None
+Comment: data1 unused
+2 symbols
+339 symbols in table
