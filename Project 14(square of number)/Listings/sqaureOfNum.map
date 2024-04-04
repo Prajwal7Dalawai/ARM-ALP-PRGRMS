@@ -4,7 +4,7 @@ Component: ARM Compiler 5.06 update 2 (build 183) Tool: armlink [4d35b7]
 
 Section Cross References
 
-    mult_table.o(mult_tabl) refers to mult_table.o(data1) for RESULT
+    square.o(mult_tabl) refers to square.o(data1) for RESULT
 
 
 ==============================================================================
@@ -15,11 +15,11 @@ Image Symbol Table
 
     Symbol Name                              Value     Ov Type        Size  Object(Section)
 
-    mult_tabl                                0x00000000   Section       80  mult_table.o(mult_tabl)
-    mult_table.s                             0x00000000   Number         0  mult_table.o ABSOLUTE
-    NUM                                      0x00000044   Data           4  mult_table.o(mult_tabl)
-    data1                                    0x40000000   Section       40  mult_table.o(data1)
-    RESULT                                   0x40000000   Data          40  mult_table.o(data1)
+    mult_tabl                                0x00000000   Section       60  square.o(mult_tabl)
+    square.s                                 0x00000000   Number         0  square.o ABSOLUTE
+    NUM                                      0x00000030   Data           4  square.o(mult_tabl)
+    data1                                    0x40000000   Section        4  square.o(data1)
+    RESULT                                   0x40000000   Data           4  square.o(data1)
 
     Global Symbols
 
@@ -35,23 +35,23 @@ Memory Map of the image
 
   Image Entry point : 0x00000000
 
-  Load Region LR_1 (Base: 0x00000000, Size: 0x00000078, Max: 0xffffffff, ABSOLUTE)
+  Load Region LR_1 (Base: 0x00000000, Size: 0x00000040, Max: 0xffffffff, ABSOLUTE)
 
-    Execution Region ER_RO (Base: 0x00000000, Size: 0x00000050, Max: 0xffffffff, ABSOLUTE)
-
-    Base Addr    Size         Type   Attr      Idx    E Section Name        Object
-
-    0x00000000   0x00000050   Code   RO            1  * mult_tabl           mult_table.o
-
-
-    Execution Region ER_RW (Base: 0x40000000, Size: 0x00000028, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_RO (Base: 0x00000000, Size: 0x0000003c, Max: 0xffffffff, ABSOLUTE)
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x40000000   0x00000028   Data   RW            2    data1               mult_table.o
+    0x00000000   0x0000003c   Code   RO            1  * mult_tabl           square.o
 
 
-    Execution Region ER_ZI (Base: 0x40000028, Size: 0x00000000, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_RW (Base: 0x40000000, Size: 0x00000004, Max: 0xffffffff, ABSOLUTE)
+
+    Base Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x40000000   0x00000004   Data   RW            2    data1               square.o
+
+
+    Execution Region ER_ZI (Base: 0x40000004, Size: 0x00000000, Max: 0xffffffff, ABSOLUTE)
 
     **** No section assigned to this execution region ****
 
@@ -63,10 +63,10 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-        80         12          0         40          0        288   mult_table.o
+        60         12          0          4          0        272   square.o
 
     ----------------------------------------------------------------------
-        80         12          0         40          0        288   Object Totals
+        60         12          0          4          0        272   Object Totals
          0          0          0          0          0          0   (incl. Generated)
          0          0          0          0          0          0   (incl. Padding)
 
@@ -81,15 +81,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-        80         12          0         40          0        288   Grand Totals
-        80         12          0         40          0        288   ELF Image Totals
-        80         12          0         40          0          0   ROM Totals
+        60         12          0          4          0        272   Grand Totals
+        60         12          0          4          0        272   ELF Image Totals
+        60         12          0          4          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                   80 (   0.08kB)
-    Total RW  Size (RW Data + ZI Data)                40 (   0.04kB)
-    Total ROM Size (Code + RO Data + RW Data)        120 (   0.12kB)
+    Total RO  Size (Code + RO Data)                   60 (   0.06kB)
+    Total RW  Size (RW Data + ZI Data)                 4 (   0.00kB)
+    Total ROM Size (Code + RO Data + RW Data)         64 (   0.06kB)
 
 ==============================================================================
 

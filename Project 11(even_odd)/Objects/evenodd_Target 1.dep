@@ -1,2 +1,2 @@
 Dependencies for Project 'evenodd', Target 'Target 1': (DO NOT MODIFY !)
-F (.\evenodd.s)(0x660E7548)(--cpu ARM7TDMI --pd "__EVAL SETA 1" -g --apcs=interwork -I D:\Kiel-5\ARM\RV31\INC-I D:\Kiel-5\ARM\CMSIS\Include-I D:\Kiel-5\ARM\Inc\Philips--pd "__UVISION_VERSION SETA 520"--list .\listings\evenodd.lst --xref -o .\objects\evenodd.o --depend .\objects\evenodd.d)
+F (.\evenodd.s)(0x660E77FD)(--cpu ARM7TDMI --pd "__EVAL SETA 1" -g --apcs=interwork -I D:\Kiel-5\ARM\RV31\INC-I D:\Kiel-5\ARM\CMSIS\Include-I D:\Kiel-5\ARM\Inc\Philips--pd "__UVISION_VERSION SETA 520"--list .\listings\evenodd.lst --xref -o .\objects\evenodd.o --depend .\objects\evenodd.d)

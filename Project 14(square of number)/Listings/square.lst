@@ -1,0 +1,86 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             mult_tabl,CODE,READONLY
+    2 00000000 E59F002C        LDR              R0,=NUM     ;NUMBER
+    3 00000004 E59F102C        LDR              R1,=RESULT  ;RESULT ARRAY
+    4 00000008 E5902000        LDR              R2,[R0]
+    5 0000000C E3A03001        MOV              R3,#1       ;COUNT VARIABLE
+    6 00000010 E3A04000        MOV              R4,#0       ;SUBCOUNT
+    7 00000014 E3A05000        MOV              R5,#0       ;TEMP RESULT
+    8 00000018 E0855002 
+                       NEXTADD ADD              R5,R5,R2
+    9 0000001C E2844001        ADD              R4,R4,#1
+   10 00000020 E1540002        CMP              R4,R2
+   11 00000024 1AFFFFFB        BNE              NEXTADD
+   12 00000028 E5815000        str              R5,[R1]
+   13 0000002C E1A00000        NOP
+   14 00000030 00000003 
+                       NUM     DCD              0X3
+   15 00000034 00000000 
+              00000000         AREA             data1,DATA,READWRITE
+   16 00000000 00000000 
+                       RESULT  DCD              0X0
+   17 00000004                 END
+Command Line: --debug --xref --diag_suppress=9931 --apcs=interwork --depend=.\o
+bjects\square.d -o.\objects\square.o -ID:\Kiel-5\ARM\RV31\INC -ID:\Kiel-5\ARM\C
+MSIS\Include -ID:\Kiel-5\ARM\Inc\Philips --predefine="__EVAL SETA 1" --predefin
+e="__UVISION_VERSION SETA 520" --list=.\listings\square.lst square.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+NEXTADD 00000018
+
+Symbol: NEXTADD
+   Definitions
+      At line 8 in file square.s
+   Uses
+      At line 11 in file square.s
+Comment: NEXTADD used once
+NUM 00000030
+
+Symbol: NUM
+   Definitions
+      At line 14 in file square.s
+   Uses
+      At line 2 in file square.s
+Comment: NUM used once
+mult_tabl 00000000
+
+Symbol: mult_tabl
+   Definitions
+      At line 1 in file square.s
+   Uses
+      None
+Comment: mult_tabl unused
+3 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+RESULT 00000000
+
+Symbol: RESULT
+   Definitions
+      At line 16 in file square.s
+   Uses
+      At line 3 in file square.s
+Comment: RESULT used once
+data1 00000000
+
+Symbol: data1
+   Definitions
+      At line 15 in file square.s
+   Uses
+      None
+Comment: data1 unused
+2 symbols
+339 symbols in table

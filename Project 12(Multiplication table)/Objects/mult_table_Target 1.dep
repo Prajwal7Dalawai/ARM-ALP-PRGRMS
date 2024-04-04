@@ -1,2 +1,2 @@
 Dependencies for Project 'mult_table', Target 'Target 1': (DO NOT MODIFY !)
-F (.\mult_table.s)(0x660E7175)(--cpu ARM7TDMI --pd "__EVAL SETA 1" -g --apcs=interwork -I D:\Kiel-5\ARM\RV31\INC-I D:\Kiel-5\ARM\CMSIS\Include-I D:\Kiel-5\ARM\Inc\Philips--pd "__UVISION_VERSION SETA 520"--list .\listings\mult_table.lst --xref -o .\objects\mult_table.o --depend .\objects\mult_table.d)
+F (.\mult_table.s)(0x660E8495)(--cpu ARM7TDMI --pd "__EVAL SETA 1" -g --apcs=interwork -I D:\Kiel-5\ARM\RV31\INC-I D:\Kiel-5\ARM\CMSIS\Include-I D:\Kiel-5\ARM\Inc\Philips--pd "__UVISION_VERSION SETA 520"--list .\listings\mult_table.lst --xref -o .\objects\mult_table.o --depend .\objects\mult_table.d)
