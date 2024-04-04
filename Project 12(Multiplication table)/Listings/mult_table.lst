@@ -1,0 +1,101 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             mult_tabl,CODE,READONLY
+    2 00000000 E59F003C        LDR              R0,=NUM     ;NUMBER
+    3 00000004 E59F103C        LDR              R1,=RESULT  ;RESULT ARRAY
+    4 00000008 E5902000        LDR              R2,[R0]
+    5 0000000C E3A03001        MOV              R3,#1       ;COUNT VARIABLE
+    6 00000010 E3A04000        MOV              R4,#0       ;SUBCOUNT
+    7 00000014 E3A05000        MOV              R5,#0       ;TEMP RESULT
+    8 00000018 E0855000 
+                       NEXTADD ADD              R5,R5,R0
+    9 0000001C E2844001        ADD              R4,R4,#1
+   10 00000020 E1530004        CMP              R3,R4
+   11 00000024 1AFFFFFB        BNE              NEXTADD
+   12 00000028 E4915004        LDR              R5,[R1],#04
+   13 0000002C E3A04000        MOV              R4,#00
+   14 00000030 E2833001        ADD              R3,R3,#1
+   15 00000034 E353000B        CMP              R3,#11
+   16 00000038 1AFFFFF6        BNE              NEXTADD
+   17 0000003C E1A00000        NOP
+   18 00000040 00000002 
+                       NUM     DCD              0X2
+   19 00000044 00000000 
+              00000000         AREA             data1,DATA,READWRITE
+   20 00000000 00000000 
+              00000000 
+              00000000 
+              00000000 
+              00000000 
+              00000000 
+              00000000 
+              00000000 
+              00000000 
+              00000000 RESULT  DCD              0X0, 0X0, 0X0, 0X0, 0X0, 0X0, 0
+X0, 0X0, 0X0, 0X0
+   21 00000028                 END
+Command Line: --debug --xref --diag_suppress=9931 --apcs=interwork --depend=.\o
+bjects\mult_table.d -o.\objects\mult_table.o -ID:\Kiel-5\ARM\RV31\INC -ID:\Kiel
+-5\ARM\CMSIS\Include -ID:\Kiel-5\ARM\Inc\Philips --predefine="__EVAL SETA 1" --
+predefine="__UVISION_VERSION SETA 520" --list=.\listings\mult_table.lst mult_ta
+ble.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+NEXTADD 00000018
+
+Symbol: NEXTADD
+   Definitions
+      At line 8 in file mult_table.s
+   Uses
+      At line 11 in file mult_table.s
+      At line 16 in file mult_table.s
+
+NUM 00000040
+
+Symbol: NUM
+   Definitions
+      At line 18 in file mult_table.s
+   Uses
+      At line 2 in file mult_table.s
+Comment: NUM used once
+mult_tabl 00000000
+
+Symbol: mult_tabl
+   Definitions
+      At line 1 in file mult_table.s
+   Uses
+      None
+Comment: mult_tabl unused
+3 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+RESULT 00000000
+
+Symbol: RESULT
+   Definitions
+      At line 20 in file mult_table.s
+   Uses
+      At line 3 in file mult_table.s
+Comment: RESULT used once
+data1 00000000
+
+Symbol: data1
+   Definitions
+      At line 19 in file mult_table.s
+   Uses
+      None
+Comment: data1 unused
+2 symbols
+339 symbols in table
