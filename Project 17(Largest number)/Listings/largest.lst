@@ -1,0 +1,102 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             largest,CODE,READONLY
+    2 00000000 E59F1040        LDR              R1,=ARR1
+    3 00000004 E3A02005        MOV              R2,#05
+    4 00000008 E59F903C        LDR              R9,=LARGEST
+    5 0000000C         
+    6 0000000C E4913004        LDR              R3,[R1],#04
+    7 00000010 E4914004 
+                       NEXTELE LDR              R4,[R1],#04
+    8 00000014 E1530004        CMP              R3,R4
+    9 00000018 2A000000        BCS              XCHANGE
+   10 0000001C EAFFFFFB        B                NEXTELE
+   11 00000020 E1A03004 
+                       XCHANGE MOV              R3,R4
+   12 00000024 E2522001        SUBS             R2,R2,#01
+   13 00000028 1AFFFFF8        BNE              NEXTELE
+   14 0000002C         
+   15 0000002C E5893000        STR              R3,[R9]
+   16 00000030 E1A00000        NOP
+   17 00000034 00000001 
+              00000002 
+              00000003 
+              00000004 
+              00000005 ARR1    DCD              0X1, 0X2, 0X3, 0X4, 0X5
+   18 00000048 00000000 
+              00000000         AREA             data1,DATA,READWRITE
+   19 00000000 00000000 
+                       LARGEST DCD              0X0
+   20 00000004                 END
+Command Line: --debug --xref --diag_suppress=9931 --apcs=interwork --depend=.\o
+bjects\largest.d -o.\objects\largest.o -ID:\Kiel-5\ARM\RV31\INC -ID:\Kiel-5\ARM
+\CMSIS\Include -ID:\Kiel-5\ARM\Inc\Philips --predefine="__EVAL SETA 1" --predef
+ine="__UVISION_VERSION SETA 520" --list=.\listings\largest.lst largest.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+ARR1 00000034
+
+Symbol: ARR1
+   Definitions
+      At line 17 in file largest.s
+   Uses
+      At line 2 in file largest.s
+Comment: ARR1 used once
+NEXTELE 00000010
+
+Symbol: NEXTELE
+   Definitions
+      At line 7 in file largest.s
+   Uses
+      At line 10 in file largest.s
+      At line 13 in file largest.s
+
+XCHANGE 00000020
+
+Symbol: XCHANGE
+   Definitions
+      At line 11 in file largest.s
+   Uses
+      At line 9 in file largest.s
+Comment: XCHANGE used once
+largest 00000000
+
+Symbol: largest
+   Definitions
+      At line 1 in file largest.s
+   Uses
+      None
+Comment: largest unused
+4 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+LARGEST 00000000
+
+Symbol: LARGEST
+   Definitions
+      At line 19 in file largest.s
+   Uses
+      At line 4 in file largest.s
+Comment: LARGEST used once
+data1 00000000
+
+Symbol: data1
+   Definitions
+      At line 18 in file largest.s
+   Uses
+      None
+Comment: data1 unused
+2 symbols
+340 symbols in table

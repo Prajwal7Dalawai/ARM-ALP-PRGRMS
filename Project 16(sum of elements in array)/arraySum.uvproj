@@ -46,7 +46,7 @@
             <InvalidFlash>1</InvalidFlash>
           </TargetStatus>
           <OutputDirectory>.\Objects\</OutputDirectory>
-          <OutputName>packUnpack</OutputName>
+          <OutputName>arraySum</OutputName>
           <CreateExecutable>1</CreateExecutable>
           <CreateLib>0</CreateLib>
           <CreateHexFile>0</CreateHexFile>
@@ -417,9 +417,9 @@
           <GroupName>Source Group 1</GroupName>
           <Files>
             <File>
-              <FileName>packUnpack.s</FileName>
+              <FileName>arraySum.s</FileName>
               <FileType>2</FileType>
-              <FilePath>.\packUnpack.s</FilePath>
+              <FilePath>.\arraySum.s</FilePath>
             </File>
           </Files>
         </Group>

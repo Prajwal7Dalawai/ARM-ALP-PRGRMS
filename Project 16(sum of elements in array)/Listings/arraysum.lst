@@ -1,0 +1,87 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             arraySum, CODE, READONLY
+    2 00000000 E59F0034        LDR              R0,=ARR
+    3 00000004 E59F9034        LDR              R9,=RESULT
+    4 00000008 E3A01005        MOV              R1,#05      ;COUNT=5
+    5 0000000C E3A04000        MOV              R4,#00      ;SUM=0
+    6 00000010 E4902004 
+                       NEXTELE LDR              R2,[R0],#04
+    7 00000014 E0944002        ADDS             R4,R4,R2
+    8 00000018 E2511001        SUBS             R1,R1,#01
+    9 0000001C 1AFFFFFB        BNE              NEXTELE
+   10 00000020 E5894000        STR              R4,[R9]
+   11 00000024 E1A00000        NOP
+   12 00000028 00000001 
+              00000002 
+              00000003 
+              00000004 
+              00000005 ARR     DCD              0X1, 0X2, 0X3, 0X4, 0X5
+   13 0000003C 00000000 
+              00000000         AREA             data1,DATA,READWRITE
+   14 00000000 00000000 
+                       RESULT  DCD              0X0
+   15 00000004                 END
+Command Line: --debug --xref --diag_suppress=9931 --apcs=interwork --depend=.\o
+bjects\arraysum.d -o.\objects\arraysum.o -ID:\Kiel-5\ARM\RV31\INC -ID:\Kiel-5\A
+RM\CMSIS\Include -ID:\Kiel-5\ARM\Inc\Philips --predefine="__EVAL SETA 1" --pred
+efine="__UVISION_VERSION SETA 520" --list=.\listings\arraysum.lst arraySum.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+ARR 00000028
+
+Symbol: ARR
+   Definitions
+      At line 12 in file arraySum.s
+   Uses
+      At line 2 in file arraySum.s
+Comment: ARR used once
+NEXTELE 00000010
+
+Symbol: NEXTELE
+   Definitions
+      At line 6 in file arraySum.s
+   Uses
+      At line 9 in file arraySum.s
+Comment: NEXTELE used once
+arraySum 00000000
+
+Symbol: arraySum
+   Definitions
+      At line 1 in file arraySum.s
+   Uses
+      None
+Comment: arraySum unused
+3 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+RESULT 00000000
+
+Symbol: RESULT
+   Definitions
+      At line 14 in file arraySum.s
+   Uses
+      At line 3 in file arraySum.s
+Comment: RESULT used once
+data1 00000000
+
+Symbol: data1
+   Definitions
+      At line 13 in file arraySum.s
+   Uses
+      None
+Comment: data1 unused
+2 symbols
+339 symbols in table
