@@ -1,0 +1,76 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             packUnpack,CODE,READONLY
+    2 00000000 E59F0020        LDR              R0,= NUM1
+    3 00000004 E59F9020        LDR              R9,= RESULT
+    4 00000008 E5901000        LDR              R1,[R0]
+    5 0000000C E1A02001        MOV              R2,R1
+    6 00000010 E1A02222        MOV              R2,R2,LSR #04
+    7 00000014 E1A02402        MOV              R2,R2,LSL #08
+    8 00000018 E201100F        AND              R1,R1,#0X0F
+    9 0000001C E1822001        ORR              R2,R2,R1
+   10 00000020 E5892000        STR              R2,[R9]
+   11 00000024 E1A00000        NOP
+   12 00000028 00000000 
+              00000000         AREA             data1,DATA,READWRITE
+   13 00000000 00000000 
+                       RESULT  DCD              0X0
+   14 00000004 00000000 
+                       NUM1    DCD              0X0
+   15 00000008                 END
+Command Line: --debug --xref --diag_suppress=9931 --apcs=interwork --depend=.\o
+bjects\packunpack.d -o.\objects\packunpack.o -ID:\Kiel-5\ARM\RV31\INC -ID:\Kiel
+-5\ARM\CMSIS\Include -ID:\Kiel-5\ARM\Inc\Philips --predefine="__EVAL SETA 1" --
+predefine="__UVISION_VERSION SETA 520" --list=.\listings\packunpack.lst packUnp
+ack.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+packUnpack 00000000
+
+Symbol: packUnpack
+   Definitions
+      At line 1 in file packUnpack.s
+   Uses
+      None
+Comment: packUnpack unused
+1 symbol
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+NUM1 00000004
+
+Symbol: NUM1
+   Definitions
+      At line 14 in file packUnpack.s
+   Uses
+      At line 2 in file packUnpack.s
+Comment: NUM1 used once
+RESULT 00000000
+
+Symbol: RESULT
+   Definitions
+      At line 13 in file packUnpack.s
+   Uses
+      At line 3 in file packUnpack.s
+Comment: RESULT used once
+data1 00000000
+
+Symbol: data1
+   Definitions
+      At line 12 in file packUnpack.s
+   Uses
+      None
+Comment: data1 unused
+3 symbols
+338 symbols in table
