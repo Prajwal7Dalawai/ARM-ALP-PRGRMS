@@ -1,0 +1,141 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             evenoddMerge,CODE,READONLY
+    2 00000000 E59F0070        LDR              R0,=ARR
+    3 00000004 E3A0900A        MOV              R9,#10      ;COUNT
+    4 00000008 E59F206C        LDR              R2,=EVENARR
+    5 0000000C E59F406C        LDR              R4,=ODDARR
+    6 00000010 E3A01000        MOV              R1,#0       ;EVEN COUNT
+    7 00000014 E3A03000        MOV              R3,#0       ;ODD COUNT
+    8 00000018 E4905004 
+                       NEXT    LDR              R5,[R0],#04
+    9 0000001C E1A06005        MOV              R6,R5
+   10 00000020 E1B060A6        MOVS             R6,R6 ,LSR #01 ;LEFT SHIFT BY O
+                                                            NE BIT
+   11 00000024 2A000004        BCS              ODD
+   12 00000028 E2911001        ADDS             R1,R1,#1
+   13 0000002C E4825004        STR              R5,[R2],#4
+   14 00000030 E2599001        SUBS             R9,R9,#01
+   15 00000034 1AFFFFF7        BNE              NEXT
+   16 00000038 EA000003        B                ENDING
+   17 0000003C E2933001 
+                       ODD     ADDS             R3,R3,#01
+   18 00000040 E4845004        STR              R5,[R4],#04
+   19 00000044 E2599001        SUBS             R9,R9,#01
+   20 00000048 1AFFFFF2        BNE              NEXT
+   21 0000004C E1A00000 
+                       ENDING  NOP
+   22 00000050 00000001 
+              00000002 
+              00000003 
+              00000004 
+              00000005 
+              00000006 
+              00000007 
+              00000008 
+              00000009 
+              00000010 ARR     DCD              0X1, 0X2, 0X3, 0X4, 0X5, 0X6, 0
+X7, 0X8, 0X9, 0X10
+   23 00000078 00000000 
+              00000000 
+              00000000         AREA             data1,DATA,READWRITE
+   24 00000000 00000000 
+              00000000 
+              00000000 
+              00000000 
+              00000000 EVENARR DCD              0X0, 0X0, 0X0, 0X0, 0X0
+   25 00000014 00000000 
+              00000000 
+              00000000 
+              00000000 
+              00000000 ODDARR  DCD              0X0,0X0,0X0,0X0,0X0
+   26 00000028                 END
+Command Line: --debug --xref --diag_suppress=9931 --apcs=interwork --depend=.\o
+bjects\evenoddmerge.d -o.\objects\evenoddmerge.o -ID:\Kiel-5\ARM\RV31\INC -ID:\
+Kiel-5\ARM\CMSIS\Include -ID:\Kiel-5\ARM\Inc\Philips --predefine="__EVAL SETA 1
+" --predefine="__UVISION_VERSION SETA 520" --list=.\listings\evenoddmerge.lst e
+venoddMerge.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+ARR 00000050
+
+Symbol: ARR
+   Definitions
+      At line 22 in file evenoddMerge.s
+   Uses
+      At line 2 in file evenoddMerge.s
+Comment: ARR used once
+ENDING 0000004C
+
+Symbol: ENDING
+   Definitions
+      At line 21 in file evenoddMerge.s
+   Uses
+      At line 16 in file evenoddMerge.s
+Comment: ENDING used once
+NEXT 00000018
+
+Symbol: NEXT
+   Definitions
+      At line 8 in file evenoddMerge.s
+   Uses
+      At line 15 in file evenoddMerge.s
+      At line 20 in file evenoddMerge.s
+
+ODD 0000003C
+
+Symbol: ODD
+   Definitions
+      At line 17 in file evenoddMerge.s
+   Uses
+      At line 11 in file evenoddMerge.s
+Comment: ODD used once
+evenoddMerge 00000000
+
+Symbol: evenoddMerge
+   Definitions
+      At line 1 in file evenoddMerge.s
+   Uses
+      None
+Comment: evenoddMerge unused
+5 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+EVENARR 00000000
+
+Symbol: EVENARR
+   Definitions
+      At line 24 in file evenoddMerge.s
+   Uses
+      At line 4 in file evenoddMerge.s
+Comment: EVENARR used once
+ODDARR 00000014
+
+Symbol: ODDARR
+   Definitions
+      At line 25 in file evenoddMerge.s
+   Uses
+      At line 5 in file evenoddMerge.s
+Comment: ODDARR used once
+data1 00000000
+
+Symbol: data1
+   Definitions
+      At line 23 in file evenoddMerge.s
+   Uses
+      None
+Comment: data1 unused
+3 symbols
+342 symbols in table
