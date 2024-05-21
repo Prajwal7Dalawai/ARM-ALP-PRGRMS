@@ -1,0 +1,73 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ;ALP Program to Arrange elements of the array in Ascendi
+                       ng Order.
+    2 00000000                 AREA             ascending,CODE,READONLY
+    3 00000000 E3A05004        MOV              R5,#04
+    4 00000004 E1A06005 
+                       L1      MOV              R6,R5
+    5 00000008 E3A00101        MOV              R0, #0X40000000
+    6 0000000C E5901000 
+                       L2      LDR              R1,[R0]
+    7 00000010 E5902004        LDR              R2,[R0,#04]
+    8 00000014 E1510002        CMP              R1,R2
+    9 00000018 BA000001        BLT              SKIP
+   10 0000001C E5801000        STR              R1,[R0]
+   11 00000020 E5801004        STR              R1,[R0,#04]
+   12 00000024 E2800004 
+                       SKIP    ADD              R0,R0,#04
+   13 00000028 E2566001        SUBS             R6,#01
+   14 0000002C 1AFFFFF6        BNE              L2
+   15 00000030 E2555001        SUBS             R5,#01
+   16 00000034 1AFFFFF2        BNE              L1
+   17 00000038 E1A00000        NOP
+   18 0000003C                 END
+Command Line: --debug --xref --diag_suppress=9931 --apcs=interwork --depend=.\o
+bjects\ascending.d -o.\objects\ascending.o -ID:\Kiel-5\ARM\RV31\INC -ID:\Kiel-5
+\ARM\CMSIS\Include -ID:\Kiel-5\ARM\Inc\Philips --predefine="__EVAL SETA 1" --pr
+edefine="__UVISION_VERSION SETA 520" --list=.\listings\ascending.lst ascending.
+s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+L1 00000004
+
+Symbol: L1
+   Definitions
+      At line 4 in file ascending.s
+   Uses
+      At line 16 in file ascending.s
+Comment: L1 used once
+L2 0000000C
+
+Symbol: L2
+   Definitions
+      At line 6 in file ascending.s
+   Uses
+      At line 14 in file ascending.s
+Comment: L2 used once
+SKIP 00000024
+
+Symbol: SKIP
+   Definitions
+      At line 12 in file ascending.s
+   Uses
+      At line 9 in file ascending.s
+Comment: SKIP used once
+ascending 00000000
+
+Symbol: ascending
+   Definitions
+      At line 2 in file ascending.s
+   Uses
+      None
+Comment: ascending unused
+4 symbols
+336 symbols in table

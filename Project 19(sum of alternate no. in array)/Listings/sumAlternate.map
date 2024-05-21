@@ -1,0 +1,106 @@
+Component: ARM Compiler 5.06 update 2 (build 183) Tool: armlink [4d35b7]
+
+==============================================================================
+
+Section Cross References
+
+    sumalternate.o(sumAlternate) refers to sumalternate.o(data1) for RESULT
+
+
+==============================================================================
+
+Adding Veneers to the image
+
+    Adding AT veneer (12 bytes, Long) for call to '[Anonymous Symbol]' from sumalternate.o(sumAlternate).
+
+1 Veneer(s) (total 12 bytes) added to the image.
+
+==============================================================================
+
+Image Symbol Table
+
+    Local Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    [Anonymous Symbol]                       0x00000001   Thumb Code     0  sumalternate.o ABSOLUTE
+    $Ven$AT$L$$                              0x00000000   ARM Code      12  anon$$obj.o(Veneer$$Code)
+    sumAlternate.s                           0x00000000   Number         0  sumalternate.o ABSOLUTE
+    sumAlternate                             0x0000000c   Section       72  sumalternate.o(sumAlternate)
+    ARR                                      0x00000038   Data          20  sumalternate.o(sumAlternate)
+    data1                                    0x40000000   Section        4  sumalternate.o(data1)
+    RESULT                                   0x40000000   Data           4  sumalternate.o(data1)
+
+    Global Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    BuildAttributes$$THM_ISAv1$ARM_ISAv4$S$PE$A:L22$X:L11$S22$IEEE1$IW$USESV6$~STKCKD$USESV7$~SHL$OSPACE$EBA8$STANDARDLIB$PRES8$EABIv2 0x00000000   Number         0  anon$$obj.o ABSOLUTE
+
+
+
+==============================================================================
+
+Memory Map of the image
+
+  Image Entry point : 0x00000000
+
+  Load Region LR_1 (Base: 0x00000000, Size: 0x00000058, Max: 0xffffffff, ABSOLUTE)
+
+    Execution Region ER_RO (Base: 0x00000000, Size: 0x00000054, Max: 0xffffffff, ABSOLUTE)
+
+    Base Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x00000000   0x0000000c   Ven    RO            8  * Veneer$$Code        anon$$obj.o
+    0x0000000c   0x00000048   Code   RO            1    sumAlternate        sumalternate.o
+
+
+    Execution Region ER_RW (Base: 0x40000000, Size: 0x00000004, Max: 0xffffffff, ABSOLUTE)
+
+    Base Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x40000000   0x00000004   Data   RW            2    data1               sumalternate.o
+
+
+    Execution Region ER_ZI (Base: 0x40000004, Size: 0x00000000, Max: 0xffffffff, ABSOLUTE)
+
+    **** No section assigned to this execution region ****
+
+
+==============================================================================
+
+Image component sizes
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
+
+        72         28          0          4          0        284   sumalternate.o
+
+    ----------------------------------------------------------------------
+        84         32          0          4          0        284   Object Totals
+        12          4          0          0          0          0   (incl. Generated)
+         0          0          0          0          0          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+         0          0          0          0          0          0   Library Totals
+         0          0          0          0          0          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+==============================================================================
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
+
+        84         32          0          4          0        284   Grand Totals
+        84         32          0          4          0        284   ELF Image Totals
+        84         32          0          4          0          0   ROM Totals
+
+==============================================================================
+
+    Total RO  Size (Code + RO Data)                   84 (   0.08kB)
+    Total RW  Size (RW Data + ZI Data)                 4 (   0.00kB)
+    Total ROM Size (Code + RO Data + RW Data)         88 (   0.09kB)
+
+==============================================================================
+
