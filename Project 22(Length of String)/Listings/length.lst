@@ -6,19 +6,26 @@ ARM Macro Assembler    Page 1
 
     1 00000000         ;ALP PROGRAM TO FIND THE LENGTH OF THE STRING
     2 00000000                 AREA             length,CODE,READONLY
-    3 00000000 E59F1020        LDR              R1,=STRING
-    4 00000004 E3A00005        MOV              R0,#5
-    5 00000008 E3A05000        MOV              R5,#0
-    6 0000000C E4D12001 
+    3 00000000         
+    4 00000000 E59F1024        LDR              R1,=STRING1
+    5 00000004 E3A05000        MOV              R5,#0
+    6 00000008         
+    7 00000008         
+    8 00000008 E4D12001 
                        NEXT    LDRB             R2,[R1],#01
-    7 00000010 E2855001        ADD              R5,R5,#01
-    8 00000014 E2500001        SUBS             R0,R0,#01
-    9 00000018 1AFFFFFB        BNE              NEXT
-   10 0000001C E1A00000        NOP
-   11 00000020 48 45 4C 
-              4C 4F 00 STRING  DCB              "HELLO",0
-   12 00000026                 END
-              00 00 00000000 
+    9 0000000C E3520024        CMP              R2, #'$'
+   10 00000010 0A000001        BEQ              STOP
+   11 00000014 E2855001        ADD              R5,R5,#01
+   12 00000018         
+   13 00000018 EAFFFFFA        B                NEXT
+   14 0000001C E1A00000 
+                       STOP    NOP
+   15 00000020 E1A00000        NOP
+   16 00000024 48 45 4C 
+              4C 4F 20 
+              24 00    STRING1 DCB              "HELLO $",0
+   17 0000002C                 END
+              00000000 
 Command Line: --debug --xref --diag_suppress=9931 --apcs=interwork --depend=.\o
 bjects\length.d -o.\objects\length.o -ID:\Kiel-5\ARM\RV31\INC -ID:\Kiel-5\ARM\C
 MSIS\Include -ID:\Kiel-5\ARM\Inc\Philips --predefine="__EVAL SETA 1" --predefin
@@ -29,22 +36,30 @@ e="__UVISION_VERSION SETA 520" --list=.\listings\length.lst length.s
 ARM Macro Assembler    Page 1 Alphabetic symbol ordering
 Relocatable symbols
 
-NEXT 0000000C
+NEXT 00000008
 
 Symbol: NEXT
    Definitions
-      At line 6 in file length.s
+      At line 8 in file length.s
    Uses
-      At line 9 in file length.s
+      At line 13 in file length.s
 Comment: NEXT used once
-STRING 00000020
+STOP 0000001C
 
-Symbol: STRING
+Symbol: STOP
    Definitions
-      At line 11 in file length.s
+      At line 14 in file length.s
    Uses
-      At line 3 in file length.s
-Comment: STRING used once
+      At line 10 in file length.s
+Comment: STOP used once
+STRING1 00000024
+
+Symbol: STRING1
+   Definitions
+      At line 16 in file length.s
+   Uses
+      At line 4 in file length.s
+Comment: STRING1 used once
 length 00000000
 
 Symbol: length
@@ -53,5 +68,5 @@ Symbol: length
    Uses
       None
 Comment: length unused
-3 symbols
-337 symbols in table
+4 symbols
+338 symbols in table

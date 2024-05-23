@@ -1,0 +1,111 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ;Program to reverse elements in the array
+    2 00000000                 AREA             reverse,CODE,READONLY
+    3 00000000 E3A00000        MOV              R0,#0       ; i=0
+    4 00000004 E28F1020        ADR              R1,ARR2     ;ASSEMBLY MACRO WHI
+                                                            CH DOESN'T OCCUPY M
+                                                            EMORY LOCATION
+    5 00000008 E59F7024        LDR              R7,=ARR1
+    6 0000000C         
+    7 0000000C E3500008 
+                       NEXTELE CMP              R0,#08
+    8 00000010 AA000003        BGE              DONE
+    9 00000014 E2603007        RSB              R3,R0,#07   ;REVERSE SUBTRACTIO
+                                                            N- 7 - [R0] = R3
+   10 00000018 E7D15003        LDRB             R5,[R1,R3]  ;R3=7-i TO RE1 ADDR
+                                                            ESS R3 VALUE GETS A
+                                                            DDED   STRB R5,[R7,
+                                                            R0] ;VALUE OF R0 GE
+                                                            TS ADDED TO R7AND V
+                                                            ALUE OF R5 STORED I
+                                                            N RESULT OF THIS VA
+                                                            LUE
+   11 0000001C E2800001        ADD              R0,R0,#01
+   12 00000020 EAFFFFF9        B                NEXTELE
+   13 00000024 EAFFFFFE 
+                       DONE    B                DONE        ;INDFINITE LOOP
+   14 00000028                 ALIGN
+   15 00000028 E1A00000        NOP
+   16 0000002C 0A 07 06 
+              0B 03 02 
+              08 07    ARR2    DCB              0XA, 0X7, 0X6, 0XB, 0X3, 0X2, 0
+X8, 0X7
+   17 00000034 00000000        AREA             data1,DATA,READWRITE
+   18 00000000 00 00 00 
+              00 00 00 
+              00       ARR1    DCB              0X0, 0X0, 0X0, 0X0, 0X0, 0X0, 0
+X0
+   19 00000007                 END
+Command Line: --debug --xref --diag_suppress=9931 --apcs=interwork --depend=.\o
+bjects\reverse.d -o.\objects\reverse.o -ID:\Kiel-5\ARM\RV31\INC -ID:\Kiel-5\ARM
+\CMSIS\Include -ID:\Kiel-5\ARM\Inc\Philips --predefine="__EVAL SETA 1" --predef
+ine="__UVISION_VERSION SETA 520" --list=.\listings\reverse.lst reverse.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+ARR2 0000002C
+
+Symbol: ARR2
+   Definitions
+      At line 16 in file reverse.s
+   Uses
+      At line 4 in file reverse.s
+Comment: ARR2 used once
+DONE 00000024
+
+Symbol: DONE
+   Definitions
+      At line 13 in file reverse.s
+   Uses
+      At line 8 in file reverse.s
+      At line 13 in file reverse.s
+
+NEXTELE 0000000C
+
+Symbol: NEXTELE
+   Definitions
+      At line 7 in file reverse.s
+   Uses
+      At line 12 in file reverse.s
+Comment: NEXTELE used once
+reverse 00000000
+
+Symbol: reverse
+   Definitions
+      At line 2 in file reverse.s
+   Uses
+      None
+Comment: reverse unused
+4 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+ARR1 00000000
+
+Symbol: ARR1
+   Definitions
+      At line 18 in file reverse.s
+   Uses
+      At line 5 in file reverse.s
+Comment: ARR1 used once
+data1 00000000
+
+Symbol: data1
+   Definitions
+      At line 17 in file reverse.s
+   Uses
+      None
+Comment: data1 unused
+2 symbols
+340 symbols in table

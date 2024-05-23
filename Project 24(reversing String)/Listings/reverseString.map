@@ -4,6 +4,7 @@ Component: ARM Compiler 5.06 update 2 (build 183) Tool: armlink [4d35b7]
 
 Section Cross References
 
+    reversestring.o(reverseString) refers to reversestring.o(data1) for OUTSTRING
 
 
 ==============================================================================
@@ -14,9 +15,11 @@ Image Symbol Table
 
     Symbol Name                              Value     Ov Type        Size  Object(Section)
 
-    length                                   0x00000000   Section       48  length.o(length)
-    length.s                                 0x00000000   Number         0  length.o ABSOLUTE
-    STRING1                                  0x00000024   Data           8  length.o(length)
+    reverseString                            0x00000000   Section       52  reversestring.o(reverseString)
+    reverseString.s                          0x00000000   Number         0  reversestring.o ABSOLUTE
+    INSTRING                                 0x00000024   Data           5  reversestring.o(reverseString)
+    data1                                    0x40000000   Section        1  reversestring.o(data1)
+    OUTSTRING                                0x40000000   Data           1  reversestring.o(data1)
 
     Global Symbols
 
@@ -32,21 +35,23 @@ Memory Map of the image
 
   Image Entry point : 0x00000000
 
-  Load Region LR_1 (Base: 0x00000000, Size: 0x00000030, Max: 0xffffffff, ABSOLUTE)
+  Load Region LR_1 (Base: 0x00000000, Size: 0x00000038, Max: 0xffffffff, ABSOLUTE)
 
-    Execution Region ER_RO (Base: 0x00000000, Size: 0x00000030, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_RO (Base: 0x00000000, Size: 0x00000034, Max: 0xffffffff, ABSOLUTE)
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x00000000   0x00000030   Code   RO            1  * length              length.o
+    0x00000000   0x00000034   Code   RO            1  * reverseString       reversestring.o
 
 
-    Execution Region ER_RW (Base: 0x40000000, Size: 0x00000000, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_RW (Base: 0x40000000, Size: 0x00000004, Max: 0xffffffff, ABSOLUTE)
 
-    **** No section assigned to this execution region ****
+    Base Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x40000000   0x00000001   Data   RW            2    data1               reversestring.o
 
 
-    Execution Region ER_ZI (Base: 0x40000000, Size: 0x00000000, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_ZI (Base: 0x40000004, Size: 0x00000000, Max: 0xffffffff, ABSOLUTE)
 
     **** No section assigned to this execution region ****
 
@@ -58,12 +63,12 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-        48         12          0          0          0        268   length.o
+        52         16          0          1          0        284   reversestring.o
 
     ----------------------------------------------------------------------
-        48         12          0          0          0        268   Object Totals
+        52         16          0          4          0        284   Object Totals
          0          0          0          0          0          0   (incl. Generated)
-         0          0          0          0          0          0   (incl. Padding)
+         0          0          0          3          0          0   (incl. Padding)
 
     ----------------------------------------------------------------------
          0          0          0          0          0          0   Library Totals
@@ -76,15 +81,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-        48         12          0          0          0        268   Grand Totals
-        48         12          0          0          0        268   ELF Image Totals
-        48         12          0          0          0          0   ROM Totals
+        52         16          0          4          0        284   Grand Totals
+        52         16          0          4          0        284   ELF Image Totals
+        52         16          0          4          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                   48 (   0.05kB)
-    Total RW  Size (RW Data + ZI Data)                 0 (   0.00kB)
-    Total ROM Size (Code + RO Data + RW Data)         48 (   0.05kB)
+    Total RO  Size (Code + RO Data)                   52 (   0.05kB)
+    Total RW  Size (RW Data + ZI Data)                 4 (   0.00kB)
+    Total ROM Size (Code + RO Data + RW Data)         56 (   0.05kB)
 
 ==============================================================================
 

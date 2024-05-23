@@ -1,0 +1,87 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ;ALP TO REVERSE THE STRING
+    2 00000000                 AREA             reverseString,CODE,READONLY
+    3 00000000 E59F1024        LDR              R1,=INSTRING
+    4 00000004 E59F3024        LDR              R3,=OUTSTRING
+    5 00000008 E3A00005        MOV              R0, #5
+    6 0000000C E0911000        ADDS             R1,R1,R0
+    7 00000010 E4512001 
+                       NEXT    LDRB             R2,[R1],#-1
+    8 00000014 E4C32001        STRB             R2,[R3],#1
+    9 00000018 E2500001        SUBS             R0,R0,#01
+   10 0000001C 1AFFFFFB        BNE              NEXT
+   11 00000020 E1A00000        NOP
+   12 00000024 48 45 4C 
+              4C 4F    INSTRING
+                               DCB              "HELLO"     ;
+   13 00000029 00 00 00 
+              00000000 
+              00000000         AREA             data1,DATA,READWRITE
+   14 00000000 00      OUTSTRING
+                               DCB              0X0
+   15 00000001                 END
+Command Line: --debug --xref --diag_suppress=9931 --apcs=interwork --depend=.\o
+bjects\reversestring.d -o.\objects\reversestring.o -ID:\Kiel-5\ARM\RV31\INC -ID
+:\Kiel-5\ARM\CMSIS\Include -ID:\Kiel-5\ARM\Inc\Philips --predefine="__EVAL SETA
+ 1" --predefine="__UVISION_VERSION SETA 520" --list=.\listings\reversestring.ls
+t reverseString.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+INSTRING 00000024
+
+Symbol: INSTRING
+   Definitions
+      At line 12 in file reverseString.s
+   Uses
+      At line 3 in file reverseString.s
+Comment: INSTRING used once
+NEXT 00000010
+
+Symbol: NEXT
+   Definitions
+      At line 7 in file reverseString.s
+   Uses
+      At line 10 in file reverseString.s
+Comment: NEXT used once
+reverseString 00000000
+
+Symbol: reverseString
+   Definitions
+      At line 2 in file reverseString.s
+   Uses
+      None
+Comment: reverseString unused
+3 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+OUTSTRING 00000000
+
+Symbol: OUTSTRING
+   Definitions
+      At line 14 in file reverseString.s
+   Uses
+      At line 4 in file reverseString.s
+Comment: OUTSTRING used once
+data1 00000000
+
+Symbol: data1
+   Definitions
+      At line 13 in file reverseString.s
+   Uses
+      None
+Comment: data1 unused
+2 symbols
+339 symbols in table

@@ -147,7 +147,7 @@
         <Mm>
           <WinNumber>1</WinNumber>
           <SubType>0</SubType>
-          <ItemText>0x40000000</ItemText>
+          <ItemText>0X40000000</ItemText>
           <AccSizeX>0</AccSizeX>
         </Mm>
       </MemoryWindow1>
@@ -202,8 +202,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>.\reverse.s</PathWithFileName>
-      <FilenameWithoutPath>reverse.s</FilenameWithoutPath>
+      <PathWithFileName>.\length.s</PathWithFileName>
+      <FilenameWithoutPath>length.s</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>

@@ -1,0 +1,2 @@
+Dependencies for Project 'reverseString', Target 'Target 1': (DO NOT MODIFY !)
+F (.\reverseString.s)(0x664C7F1F)(--cpu ARM7TDMI --pd "__EVAL SETA 1" -g --apcs=interwork -I D:\Kiel-5\ARM\RV31\INC-I D:\Kiel-5\ARM\CMSIS\Include-I D:\Kiel-5\ARM\Inc\Philips--pd "__UVISION_VERSION SETA 520"--list .\listings\reversestring.lst --xref -o .\objects\reversestring.o --depend .\objects\reversestring.d)

@@ -6,14 +6,14 @@ ARM Macro Assembler    Page 1
 
     1 00000000                 AREA             largest,CODE,READONLY
     2 00000000 E59F1040        LDR              R1,=ARR1
-    3 00000004 E3A02005        MOV              R2,#05
+    3 00000004 E3A02004        MOV              R2,#04
     4 00000008 E59F903C        LDR              R9,=LARGEST
     5 0000000C         
     6 0000000C E4913004        LDR              R3,[R1],#04
     7 00000010 E4914004 
                        NEXTELE LDR              R4,[R1],#04
-    8 00000014 E1530004        CMP              R3,R4
-    9 00000018 2A000000        BCS              XCHANGE
+    8 00000014 E1540003        CMP              R4,R3
+    9 00000018 AA000000        BGE              XCHANGE
    10 0000001C EAFFFFFB        B                NEXTELE
    11 00000020 E1A03004 
                        XCHANGE MOV              R3,R4

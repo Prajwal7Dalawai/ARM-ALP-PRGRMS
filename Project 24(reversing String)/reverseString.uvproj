@@ -46,7 +46,7 @@
             <InvalidFlash>1</InvalidFlash>
           </TargetStatus>
           <OutputDirectory>.\Objects\</OutputDirectory>
-          <OutputName>length</OutputName>
+          <OutputName>reverseString</OutputName>
           <CreateExecutable>1</CreateExecutable>
           <CreateLib>0</CreateLib>
           <CreateHexFile>0</CreateHexFile>
@@ -417,9 +417,9 @@
           <GroupName>Source Group 1</GroupName>
           <Files>
             <File>
-              <FileName>length.s</FileName>
+              <FileName>reverseString.s</FileName>
               <FileType>2</FileType>
-              <FilePath>.\length.s</FilePath>
+              <FilePath>.\reverseString.s</FilePath>
             </File>
           </Files>
         </Group>
