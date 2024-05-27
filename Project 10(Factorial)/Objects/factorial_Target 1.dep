@@ -1,2 +1,2 @@
 Dependencies for Project 'factorial', Target 'Target 1': (DO NOT MODIFY !)
-F (.\fact.s)(0x660D211B)(--cpu ARM7TDMI --pd "__EVAL SETA 1" -g --apcs=interwork -I D:\Kiel-5\ARM\RV31\INC-I D:\Kiel-5\ARM\CMSIS\Include-I D:\Kiel-5\ARM\Inc\Philips--pd "__UVISION_VERSION SETA 520"--list .\listings\fact.lst --xref -o .\objects\fact.o --depend .\objects\fact.d)
+F (.\fact.s)(0x660D211B)(--cpu ARM7TDMI --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\Inc\Philips--pd "__UVISION_VERSION SETA 520"--list .\listings\fact.lst --xref -o .\objects\fact.o --depend .\objects\fact.d)

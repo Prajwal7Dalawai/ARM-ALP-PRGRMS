@@ -16,7 +16,7 @@ Image Symbol Table
 
     length                                   0x00000000   Section       48  length.o(length)
     length.s                                 0x00000000   Number         0  length.o ABSOLUTE
-    STRING1                                  0x00000024   Data           8  length.o(length)
+    STRING1                                  0x00000024   Data           6  length.o(length)
 
     Global Symbols
 

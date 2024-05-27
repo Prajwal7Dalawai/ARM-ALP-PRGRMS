@@ -3,13 +3,13 @@
 <pre>
 <h1>µVision Build Log</h1>
 <h2>Tool Versions:</h2>
-IDE-Version: µVision V5.20.0.0
+IDE-Version: ÂµVision V5.20.0.0
 Copyright (C) 2016 ARM Ltd and ARM Germany GmbH. All rights reserved.
-License Information: a prajwal, HP Inc., LIC=----
+License Information: Prajwal Dalawai, SDMCET, LIC=----
  
 Tool Versions:
 Toolchain:       MDK-Lite  Version: 5.20
-Toolchain Path:  D:\Kiel-5\ARM\ARMCC\Bin
+Toolchain Path:  C:\Keil_v5\ARM\ARMCC\Bin
 C Compiler:      Armcc.exe V5.06 update 2 (build 183)
 Assembler:       Armasm.exe V5.06 update 2 (build 183)
 Linker/Locator:  ArmLink.exe V5.06 update 2 (build 183)
@@ -25,13 +25,15 @@ D:\Kiel-5\Projects\ARM-ALP-PRGRMS\Project-20(Ascending Order element)\ascending.
 Project File Date:  05/14/2024
 
 <h2>Output:</h2>
-*** Using Compiler 'V5.06 update 2 (build 183)', folder: 'D:\Kiel-5\ARM\ARMCC\Bin'
+*** Using Compiler 'V5.06 update 2 (build 183)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'Target 1'
 assembling ascending.s...
-linking...
-Program Size: Code=60 RO-data=0 RW-data=0 ZI-data=0  
-".\Objects\ascending.axf" - 0 Error(s), 0 Warning(s).
-Build Time Elapsed:  00:00:00
+ascending.s(2): error: A1163E: Unknown opcode ascending,CODE,READONLY , expecting opcode or Macro
+ascending.s(3): error: A1105E: Area directive missing
+ascending.s(3): warning: A1088W: Faking declaration of area AREA |$$$$$$$|
+".\Objects\ascending.axf" - 2 Error(s), 1 Warning(s).
+Target not created.
+Build Time Elapsed:  00:00:02
 </pre>
 </body>
 </html>

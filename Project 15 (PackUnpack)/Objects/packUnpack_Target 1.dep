@@ -1,2 +1,2 @@
 Dependencies for Project 'packUnpack', Target 'Target 1': (DO NOT MODIFY !)
-F (.\packUnpack.s)(0x66309CAB)(--cpu ARM7TDMI --pd "__EVAL SETA 1" -g --apcs=interwork -I D:\Kiel-5\ARM\RV31\INC-I D:\Kiel-5\ARM\CMSIS\Include-I D:\Kiel-5\ARM\Inc\Philips--pd "__UVISION_VERSION SETA 520"--list .\listings\packunpack.lst --xref -o .\objects\packunpack.o --depend .\objects\packunpack.d)
+F (.\packUnpack.s)(0x66545BC2)(--cpu ARM7TDMI --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\Inc\Philips--pd "__UVISION_VERSION SETA 520"--list .\listings\packunpack.lst --xref -o .\objects\packunpack.o --depend .\objects\packunpack.d)

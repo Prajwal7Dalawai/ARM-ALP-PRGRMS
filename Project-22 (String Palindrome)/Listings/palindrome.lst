@@ -1,0 +1,93 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             PALINDROME,CODE,READONLY
+    2 00000000 E3A00000        MOV              R0,#0
+    3 00000004 E59F103C        LDR              R1,=STR1
+    4 00000008 E59F303C        LDR              R3,=STR2
+    5 0000000C E2811004        ADD              R1,R1,#04
+    6 00000010 E3A0A005        MOV              R10,#05
+    7 00000014 E3E09000        MOV              R9,#0XFFFFFFFF
+    8 00000018 E4514001 
+                       NEXT1   LDRB             R4,[R1],#-01
+    9 0000001C E4D36001        LDRB             R6,[R3],#01
+   10 00000020 E1540006        CMP              R4,R6
+   11 00000024 1A000002        BNE              END1
+   12 00000028 E25AA001        SUBS             R10,R10,#01
+   13 0000002C 1AFFFFF9        BNE              NEXT1
+   14 00000030 EA000000        B                STOP1
+   15 00000034 E3A09000 
+                       END1    MOV              R9,#0
+   16 00000038 E1A00000 
+                       STOP1   NOP
+   17 0000003C 48 45 4C 
+              4C 4F 00 STR1    DCB              "HELLO",0
+   18 00000042 4F 4C 4C 
+              45 48 00 STR2    DCB              "OLLEH",0
+   19 00000048                 END
+              00000000 
+              00000000 
+Command Line: --debug --xref --diag_suppress=9931 --apcs=interwork --depend=.\o
+bjects\palindrome.d -o.\objects\palindrome.o -IC:\Keil_v5\ARM\RV31\INC -IC:\Kei
+l_v5\ARM\CMSIS\Include -IC:\Keil_v5\ARM\Inc\Philips --predefine="__EVAL SETA 1"
+ --predefine="__UVISION_VERSION SETA 520" --list=.\listings\palindrome.lst pali
+ndrome.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+END1 00000034
+
+Symbol: END1
+   Definitions
+      At line 15 in file palindrome.s
+   Uses
+      At line 11 in file palindrome.s
+Comment: END1 used once
+NEXT1 00000018
+
+Symbol: NEXT1
+   Definitions
+      At line 8 in file palindrome.s
+   Uses
+      At line 13 in file palindrome.s
+Comment: NEXT1 used once
+PALINDROME 00000000
+
+Symbol: PALINDROME
+   Definitions
+      At line 1 in file palindrome.s
+   Uses
+      None
+Comment: PALINDROME unused
+STOP1 00000038
+
+Symbol: STOP1
+   Definitions
+      At line 16 in file palindrome.s
+   Uses
+      At line 14 in file palindrome.s
+Comment: STOP1 used once
+STR1 0000003C
+
+Symbol: STR1
+   Definitions
+      At line 17 in file palindrome.s
+   Uses
+      At line 3 in file palindrome.s
+Comment: STR1 used once
+STR2 00000042
+
+Symbol: STR2
+   Definitions
+      At line 18 in file palindrome.s
+   Uses
+      At line 4 in file palindrome.s
+Comment: STR2 used once
+6 symbols
+340 symbols in table

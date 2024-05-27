@@ -22,14 +22,13 @@ ARM Macro Assembler    Page 1
                        STOP    NOP
    15 00000020 E1A00000        NOP
    16 00000024 48 45 4C 
-              4C 4F 20 
-              24 00    STRING1 DCB              "HELLO $",0
-   17 0000002C                 END
-              00000000 
+              4C 4F 00 STRING1 DCB              "HELLO",0
+   17 0000002A                 END
+              00 00 00000000 
 Command Line: --debug --xref --diag_suppress=9931 --apcs=interwork --depend=.\o
-bjects\length.d -o.\objects\length.o -ID:\Kiel-5\ARM\RV31\INC -ID:\Kiel-5\ARM\C
-MSIS\Include -ID:\Kiel-5\ARM\Inc\Philips --predefine="__EVAL SETA 1" --predefin
-e="__UVISION_VERSION SETA 520" --list=.\listings\length.lst length.s
+bjects\length.d -o.\objects\length.o -IC:\Keil_v5\ARM\RV31\INC -IC:\Keil_v5\ARM
+\CMSIS\Include -IC:\Keil_v5\ARM\Inc\Philips --predefine="__EVAL SETA 1" --prede
+fine="__UVISION_VERSION SETA 520" --list=.\listings\length.lst length.s
 
 
 
