@@ -1,0 +1,2 @@
+Dependencies for Project 'string_concat', Target 'Target 1': (DO NOT MODIFY !)
+F (.\string_concat.s)(0x6654C803)(--cpu ARM7TDMI --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\Inc\Philips--pd "__UVISION_VERSION SETA 520"--list .\listings\string_concat.lst --xref -o .\objects\string_concat.o --depend .\objects\string_concat.d)

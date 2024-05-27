@@ -1,0 +1,154 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             CONCAT,CODE,READONLY
+    2 00000000 E59F006C        LDR              R0,=STR1
+    3 00000004 E59F106C        LDR              R1,=STR2
+    4 00000008 E3A03000        MOV              R3,#0       ;INITIAL LENGTH OF 
+                                                            FIRST STRING
+    5 0000000C E3A05000        MOV              R5,#0       ;INITIAL LENGTH OF 
+                                                            SECOND STRING
+    6 00000010 E4D02001 
+                       NEXT1   LDRB             R2,[R0],#01 ;CALCULATING STRING
+                                                             LENGTH OF FIRST ST
+                                                            RING
+    7 00000014 E2933001        ADDS             R3,#01
+    8 00000018 E3520000        CMP              R2,#0
+    9 0000001C 1AFFFFFB        BNE              NEXT1
+   10 00000020 E2533001        SUBS             R3,R3,#01
+   11 00000024 E4D14001 
+                       NEXT2   LDRB             R4,[R1],#01 ;CALCULATING STRING
+                                                             LENGTH OF SECOND S
+                                                            TRING
+   12 00000028 E2955001        ADDS             R5,#01
+   13 0000002C E3540000        CMP              R4,#0
+   14 00000030 1AFFFFFB        BNE              NEXT2
+   15 00000034 E2555001        SUBS             R5,R5,#01
+   16 00000038 E59F0034        LDR              R0,=STR1
+   17 0000003C E59F1034        LDR              R1,=STR2
+   18 00000040 E59F9034        LDR              R9,=RESULTSTR ;PERFORMING STRIN
+                                                            G CONCATENATION
+   19 00000044 E4D1A001 
+                       NEXT3   LDRB             R10,[R1],#01 ;ADDING FIRST STRI
+                                                            NG TO RESULTANT ARR
+                                                            AY
+   20 00000048 E4C9A001        STRB             R10,[R9],#01
+   21 0000004C E2533001        SUBS             R3,R3,#01
+   22 00000050 1AFFFFFB        BNE              NEXT3
+   23 00000054 E4D2A001 
+                       NEXT4   LDRB             R10,[R2],#01 ;ADDING SECIND STR
+                                                            ING TO RESULTANT AR
+                                                            RAY
+   24 00000058 E4C9A001        STRB             R10,[R9],#01
+   25 0000005C E2555001        SUBS             R5,R5,#01
+   26 00000060 1AFFFFFB        BNE              NEXT4
+   27 00000064 E1A00000        NOP
+   28 00000068 48 45 4C 
+              4C 4F 00 STR1    DCB              "HELLO",0
+   29 0000006E 57 4F 52 
+              4C 44 00 STR2    DCB              "WORLD",0
+   30 00000074 00000000 
+              00000000 
+              00000000 
+              00000000 
+              00000000         AREA             data1,DATA,READWRITE
+   31 00000000 00      RESULTSTR
+                               DCB              0X0
+   32 00000001                 END
+Command Line: --debug --xref --diag_suppress=9931 --apcs=interwork --depend=.\o
+bjects\string_concat.d -o.\objects\string_concat.o -IC:\Keil_v5\ARM\RV31\INC -I
+C:\Keil_v5\ARM\CMSIS\Include -IC:\Keil_v5\ARM\Inc\Philips --predefine="__EVAL S
+ETA 1" --predefine="__UVISION_VERSION SETA 520" --list=.\listings\string_concat
+.lst string_concat.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+CONCAT 00000000
+
+Symbol: CONCAT
+   Definitions
+      At line 1 in file string_concat.s
+   Uses
+      None
+Comment: CONCAT unused
+NEXT1 00000010
+
+Symbol: NEXT1
+   Definitions
+      At line 6 in file string_concat.s
+   Uses
+      At line 9 in file string_concat.s
+Comment: NEXT1 used once
+NEXT2 00000024
+
+Symbol: NEXT2
+   Definitions
+      At line 11 in file string_concat.s
+   Uses
+      At line 14 in file string_concat.s
+Comment: NEXT2 used once
+NEXT3 00000044
+
+Symbol: NEXT3
+   Definitions
+      At line 19 in file string_concat.s
+   Uses
+      At line 22 in file string_concat.s
+Comment: NEXT3 used once
+NEXT4 00000054
+
+Symbol: NEXT4
+   Definitions
+      At line 23 in file string_concat.s
+   Uses
+      At line 26 in file string_concat.s
+Comment: NEXT4 used once
+STR1 00000068
+
+Symbol: STR1
+   Definitions
+      At line 28 in file string_concat.s
+   Uses
+      At line 2 in file string_concat.s
+      At line 16 in file string_concat.s
+
+STR2 0000006E
+
+Symbol: STR2
+   Definitions
+      At line 29 in file string_concat.s
+   Uses
+      At line 3 in file string_concat.s
+      At line 17 in file string_concat.s
+
+7 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+RESULTSTR 00000000
+
+Symbol: RESULTSTR
+   Definitions
+      At line 31 in file string_concat.s
+   Uses
+      At line 18 in file string_concat.s
+Comment: RESULTSTR used once
+data1 00000000
+
+Symbol: data1
+   Definitions
+      At line 30 in file string_concat.s
+   Uses
+      None
+Comment: data1 unused
+2 symbols
+343 symbols in table
