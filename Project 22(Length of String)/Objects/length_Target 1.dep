@@ -1,2 +1,2 @@
 Dependencies for Project 'length', Target 'Target 1': (DO NOT MODIFY !)
-F (.\length.s)(0x66545E27)(--cpu ARM7TDMI --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\Inc\Philips--pd "__UVISION_VERSION SETA 520"--list .\listings\length.lst --xref -o .\objects\length.o --depend .\objects\length.d)
+F (.\length.s)(0x6655B4C0)(--cpu ARM7TDMI --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\Inc\Philips--pd "__UVISION_VERSION SETA 520"--list .\listings\length.lst --xref -o .\objects\length.o --depend .\objects\length.d)

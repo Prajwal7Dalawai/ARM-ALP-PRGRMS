@@ -40,10 +40,10 @@ ARM Macro Assembler    Page 1
 X0, 0X0, 0X0, 0X0
    22 00000028                 END
 Command Line: --debug --xref --diag_suppress=9931 --apcs=interwork --depend=.\o
-bjects\mult_table.d -o.\objects\mult_table.o -ID:\Kiel-5\ARM\RV31\INC -ID:\Kiel
--5\ARM\CMSIS\Include -ID:\Kiel-5\ARM\Inc\Philips --predefine="__EVAL SETA 1" --
-predefine="__UVISION_VERSION SETA 520" --list=.\listings\mult_table.lst mult_ta
-ble.s
+bjects\mult_table.d -o.\objects\mult_table.o -IC:\Keil_v5\ARM\RV31\INC -IC:\Kei
+l_v5\ARM\CMSIS\Include -IC:\Keil_v5\ARM\Inc\Philips --predefine="__EVAL SETA 1"
+ --predefine="__UVISION_VERSION SETA 520" --list=.\listings\mult_table.lst mult
+_table.s
 
 
 

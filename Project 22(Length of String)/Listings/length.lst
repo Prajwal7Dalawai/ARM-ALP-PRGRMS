@@ -13,17 +13,16 @@ ARM Macro Assembler    Page 1
     7 00000008         
     8 00000008 E4D12001 
                        NEXT    LDRB             R2,[R1],#01
-    9 0000000C E3520024        CMP              R2, #'$'
+    9 0000000C E3520000        CMP              R2, #0
    10 00000010 0A000001        BEQ              STOP
    11 00000014 E2855001        ADD              R5,R5,#01
-   12 00000018         
-   13 00000018 EAFFFFFA        B                NEXT
-   14 0000001C E1A00000 
+   12 00000018 EAFFFFFA        B                NEXT
+   13 0000001C E1A00000 
                        STOP    NOP
-   15 00000020 E1A00000        NOP
-   16 00000024 48 45 4C 
+   14 00000020 E1A00000        NOP
+   15 00000024 48 45 4C 
               4C 4F 00 STRING1 DCB              "HELLO",0
-   17 0000002A                 END
+   16 0000002A                 END
               00 00 00000000 
 Command Line: --debug --xref --diag_suppress=9931 --apcs=interwork --depend=.\o
 bjects\length.d -o.\objects\length.o -IC:\Keil_v5\ARM\RV31\INC -IC:\Keil_v5\ARM
@@ -41,13 +40,13 @@ Symbol: NEXT
    Definitions
       At line 8 in file length.s
    Uses
-      At line 13 in file length.s
+      At line 12 in file length.s
 Comment: NEXT used once
 STOP 0000001C
 
 Symbol: STOP
    Definitions
-      At line 14 in file length.s
+      At line 13 in file length.s
    Uses
       At line 10 in file length.s
 Comment: STOP used once
@@ -55,7 +54,7 @@ STRING1 00000024
 
 Symbol: STRING1
    Definitions
-      At line 16 in file length.s
+      At line 15 in file length.s
    Uses
       At line 4 in file length.s
 Comment: STRING1 used once

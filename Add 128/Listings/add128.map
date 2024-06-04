@@ -1,0 +1,101 @@
+Component: ARM Compiler 5.06 update 2 (build 183) Tool: armlink [4d35b7]
+
+==============================================================================
+
+Section Cross References
+
+    add128.o(add128) refers to add128.o(data1) for L1RESULT
+
+
+==============================================================================
+
+Image Symbol Table
+
+    Local Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    add128                                   0x00000000   Section      168  add128.o(add128)
+    add128.s                                 0x00000000   Number         0  add128.o ABSOLUTE
+    L1NUM1                                   0x00000068   Data           4  add128.o(add128)
+    L2NUM1                                   0x0000006c   Data           4  add128.o(add128)
+    L1NUM2                                   0x00000078   Data           4  add128.o(add128)
+    L2NUM2                                   0x0000007c   Data           4  add128.o(add128)
+    data1                                    0x40000000   Section       16  add128.o(data1)
+    L1RESULT                                 0x40000000   Data           4  add128.o(data1)
+    L2RESULT                                 0x40000004   Data           4  add128.o(data1)
+    U1RESULT                                 0x40000008   Data           4  add128.o(data1)
+    U2RESULT                                 0x4000000c   Data           4  add128.o(data1)
+
+    Global Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    BuildAttributes$$THM_ISAv1$ARM_ISAv4$S$PE$A:L22$X:L11$S22$IEEE1$IW$USESV6$~STKCKD$USESV7$~SHL$OSPACE$EBA8$STANDARDLIB$EABIv2 0x00000000   Number         0  anon$$obj.o ABSOLUTE
+
+
+
+==============================================================================
+
+Memory Map of the image
+
+  Image Entry point : 0x00000000
+
+  Load Region LR_1 (Base: 0x00000000, Size: 0x000000b8, Max: 0xffffffff, ABSOLUTE)
+
+    Execution Region ER_RO (Base: 0x00000000, Size: 0x000000a8, Max: 0xffffffff, ABSOLUTE)
+
+    Base Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x00000000   0x000000a8   Code   RO            1  * add128              add128.o
+
+
+    Execution Region ER_RW (Base: 0x40000000, Size: 0x00000010, Max: 0xffffffff, ABSOLUTE)
+
+    Base Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x40000000   0x00000010   Data   RW            2    data1               add128.o
+
+
+    Execution Region ER_ZI (Base: 0x40000010, Size: 0x00000000, Max: 0xffffffff, ABSOLUTE)
+
+    **** No section assigned to this execution region ****
+
+
+==============================================================================
+
+Image component sizes
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
+
+       168         64          0         16          0        264   add128.o
+
+    ----------------------------------------------------------------------
+       168         64          0         16          0        264   Object Totals
+         0          0          0          0          0          0   (incl. Generated)
+         0          0          0          0          0          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+         0          0          0          0          0          0   Library Totals
+         0          0          0          0          0          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+==============================================================================
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
+
+       168         64          0         16          0        264   Grand Totals
+       168         64          0         16          0        264   ELF Image Totals
+       168         64          0         16          0          0   ROM Totals
+
+==============================================================================
+
+    Total RO  Size (Code + RO Data)                  168 (   0.16kB)
+    Total RW  Size (RW Data + ZI Data)                16 (   0.02kB)
+    Total ROM Size (Code + RO Data + RW Data)        184 (   0.18kB)
+
+==============================================================================
+

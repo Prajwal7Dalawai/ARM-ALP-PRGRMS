@@ -6,10 +6,9 @@
 		
 		
 NEXT	LDRB R2,[R1],#01
-		CMP R2, #'$'
+		CMP R2, #0
 		BEQ STOP
 		ADD R5,R5,#01
-		
 		B NEXT		
 STOP	NOP
 		NOP

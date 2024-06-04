@@ -1,2 +1,2 @@
 Dependencies for Project 'sumAlternate', Target 'Target 1': (DO NOT MODIFY !)
-F (.\sumAlternate.s)(0x663A2048)(--cpu ARM7TDMI --pd "__EVAL SETA 1" -g --apcs=interwork -I D:\Kiel-5\ARM\RV31\INC-I D:\Kiel-5\ARM\CMSIS\Include-I D:\Kiel-5\ARM\Inc\Philips--pd "__UVISION_VERSION SETA 520"--list .\listings\sumalternate.lst --xref -o .\objects\sumalternate.o --depend .\objects\sumalternate.d)
+F (.\sumAlternate.s)(0x663A2048)(--cpu ARM7TDMI --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\Inc\Philips--pd "__UVISION_VERSION SETA 520"--list .\listings\sumalternate.lst --xref -o .\objects\sumalternate.o --depend .\objects\sumalternate.d)

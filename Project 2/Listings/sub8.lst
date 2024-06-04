@@ -4,29 +4,31 @@
 ARM Macro Assembler    Page 1 
 
 
-    1 00000000                 AREA             Sub8,CODE,READONLY
-    2 00000000 E3A01055        MOV              R1,#0X55
-    3 00000004 E3A02018        MOV              R2,#0X18
-    4 00000008 E0523001        SUBS             R3,R2,R1
-    5 0000000C E1A00000        NOP
-    6 00000010                 END
+    1 00000000                 AREA             checkSBCS, CODE, READONLY
+    2 00000000 E3A00002        MOV              R0, #02
+    3 00000004 E3A01003        MOV              R1, #03
+    4 00000008 E3A03000        MOV              R3, #00
+    5 0000000C E2D33000        SBCS             R3, R3, #00
+    6 00000010 E1A00000        NOP
+    7 00000014 E1A00000        NOP
+    8 00000018                 END
 Command Line: --debug --xref --diag_suppress=9931 --apcs=interwork --depend=.\o
-bjects\sub8.d -o.\objects\sub8.o -ID:\Kiel-5\ARM\RV31\INC -ID:\Kiel-5\ARM\CMSIS
-\Include -ID:\Kiel-5\ARM\Inc\Philips --predefine="__EVAL SETA 1" --predefine="_
-_UVISION_VERSION SETA 520" --list=.\listings\sub8.lst Sub8.s
+bjects\sub8.d -o.\objects\sub8.o -IC:\Keil_v5\ARM\RV31\INC -IC:\Keil_v5\ARM\CMS
+IS\Include -IC:\Keil_v5\ARM\Inc\Philips --predefine="__EVAL SETA 1" --predefine
+="__UVISION_VERSION SETA 520" --list=.\listings\sub8.lst Sub8.s
 
 
 
 ARM Macro Assembler    Page 1 Alphabetic symbol ordering
 Relocatable symbols
 
-Sub8 00000000
+checkSBCS 00000000
 
-Symbol: Sub8
+Symbol: checkSBCS
    Definitions
       At line 1 in file Sub8.s
    Uses
       None
-Comment: Sub8 unused
+Comment: checkSBCS unused
 1 symbol
 333 symbols in table
